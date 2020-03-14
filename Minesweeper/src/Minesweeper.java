@@ -101,17 +101,17 @@ public class Minesweeper extends JPanel implements ActionListener, MouseListener
 		NUMMINES = easyMines;
 		explodedX = -1;
 		explodedY = -1;
-		mainClip = loadClip(getClass().getResource("/AmbientLoop.wav").getFile());
-		tileUp = new ImageIcon(ImageIO.read(new File(getClass().getResource("/Cell.png").getFile())));
-		tilePressed = new ImageIcon(ImageIO.read(new File(getClass().getResource("/CellDown.png").getFile())));
-		tileOver = new ImageIcon(ImageIO.read(new File(getClass().getResource("/CellOver.png").getFile())));
-		tileExplodedMine = new ImageIcon(ImageIO.read(new File(getClass().getResource("/ExplodedMineCell.png").getFile())));
-		tileMine = new ImageIcon(ImageIO.read(new File(getClass().getResource("/Mine.png").getFile())));
-		tileHovered = new ImageIcon(ImageIO.read(new File(getClass().getResource("/CellOver.png").getFile())));
-		tileFlag = new ImageIcon(ImageIO.read(new File(getClass().getResource("/flag.png").getFile())));
-		winImg = new ImageIcon(ImageIO.read(new File(getClass().getResource("/winImgResized.png").getFile())));
+		mainClip = loadClip("lib/AmbientLoop.wav");
+		tileUp = new ImageIcon(ImageIO.read(new File("lib/Cell.png")));
+		tilePressed = new ImageIcon(ImageIO.read(new File("lib/CellDown.png")));
+		tileOver = new ImageIcon(ImageIO.read(new File("lib/CellOver.png")));
+		tileExplodedMine = new ImageIcon(ImageIO.read(new File("lib/ExplodedMineCell.png")));
+		tileMine = new ImageIcon(ImageIO.read(new File("lib/Mine.png")));
+		tileHovered = new ImageIcon(ImageIO.read(new File("lib/CellOver.png")));
+		tileFlag = new ImageIcon(ImageIO.read(new File("lib/flag.png")));
+		winImg = new ImageIcon(ImageIO.read(new File("lib/winImgResized.png")));
 		tileNum = new ImageIcon[9];
-		scoreFile = new File(getClass().getResource("/ScoreInfo.txt").getFile());
+		scoreFile = new File("lib/ScoreInfo.txt");
 		musicOn = false;
 		difficulties = new String[] { "Easy", "Medium", "Expert", "Absurd!" };
 		diffButton = new JComboBox<String>(difficulties);
@@ -130,7 +130,7 @@ public class Minesweeper extends JPanel implements ActionListener, MouseListener
 		setButtonGrid();
 		GUI.setOpaque(false);
 		for (int k = 0; k < tileNum.length; ++k) {
-			tileNum[k] = new ImageIcon(ImageIO.read(new File(getClass().getResource("/Cell" + k + ".png").getFile())));
+			tileNum[k] = new ImageIcon(ImageIO.read(new File("lib/Cell" + k + ".png")));
 		}
 		reset.addActionListener(this);
 		diffButton.addActionListener(this);
